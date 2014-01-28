@@ -1,6 +1,9 @@
 Play 2.0 PDF module
 ===================
 
+This module is a fork of the discontinued/unsuported Play Framework 2 Module from Jörg Viola: play20-pdf
+This Version is based on work by github user fhars, and is intended to Support Play Framework 2.2.1
+
 This module helps generating PDF documents dynamically from your Play! web application.
 It simply renders your HTML- and CSS-based templates to PDF.
 It is based on the Flying Saucer library, which in turn uses iText for PDF generation.
