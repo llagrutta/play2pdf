@@ -176,6 +176,13 @@ public class PDF {
 					renderer.getOutputDevice());
 			myUserAgent.setSharedContext(renderer.getSharedContext());
 			renderer.getSharedContext().setUserAgentCallback(myUserAgent);
+
+			SharedContext sharedContext = renderer.getSharedContext();
+            sharedContext.setPrint(true);
+            sharedContext.setInteractive(false);
+            sharedContext.setReplacedElementFactory(new B64ImgReplacedElementFactory(sharedContext.getReplacedElementFactory()));
+            sharedContext.getTextRenderer().setSmoothingThreshold(0);
+
 			Document document = new HtmlDocumentBuilder().parse(input);
 			renderer.setDocument(document, documentBaseURL);
 			renderer.layout();
